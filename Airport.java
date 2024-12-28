@@ -47,12 +47,13 @@ public class Airport {
             p.speak();
         });
 
-        persons.forEach(p -> {
-            p.logStatus();
-        });
+        persons.forEach(p -> p.logStatus());
 
         aircrafts.forEach(a -> {
-            a.logStatus();
+            a.doStunt();
+            a.makeSound();
         });
+
+        aircrafts.forEach(a -> a.logStatus());
     }
 }

@@ -6,7 +6,7 @@ public abstract class Logged {
     public Logged() {}
 
     public void log(String text) {
-        System.out.println("[" + logName + "]: " + text);
+        System.out.println("[" + logName + "] " + text);
     }
 
     public abstract void logStatus();

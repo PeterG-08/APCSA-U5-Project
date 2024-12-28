@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import aircraft.Cessna;
 import person.Pilot;
 
@@ -11,7 +13,20 @@ class Main {
         jfk.addAircrafts(cessna);
         jfk.addPersons(peter);
 
-        jfk.iterate();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Press enter (e to exit): ");
+            String in = scanner.nextLine();
+
+            if (in.equals("e")) {
+                break;
+            }
+
+            jfk.iterate();
+        }
+
+        scanner.close();
     }
 }
  

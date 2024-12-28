@@ -35,7 +35,7 @@ public abstract class Person extends Logged {
 
     @Override
     public void logStatus() {
-        log("I am a " + type + " on a " + aircraft.name);
+        log("I am a " + type + " on a " + aircraft.name + ".");
     }
 
     @Override

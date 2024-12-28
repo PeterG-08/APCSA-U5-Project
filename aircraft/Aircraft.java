@@ -7,7 +7,7 @@ import java.util.Set;
 import person.Person;
 import util.Logged;
 
-public class Aircraft extends Logged {
+public abstract class Aircraft extends Logged {
     private static int serialCounter = 0;
 
     public final String name;
@@ -38,8 +38,6 @@ public class Aircraft extends Logged {
     }
 
     public void setGearUp(boolean gearUp) {
-        if (this.gearUp == gearUp) log("Gear already"); // TODO
-        
         this.gearUp = gearUp;
     }
 
@@ -68,9 +66,15 @@ public class Aircraft extends Logged {
         currentSpeed = throttle * maxSpeedMph;
     }
 
+    /** Performs the stunt that this aircraft does. */
+    public abstract void doStunt();
+
+    /** Makes the sound that this aircraft makes. */
+    public abstract void makeSound();
+    
     @Override
     public void logStatus() {
-        log("butthole");
+        log("Gear up: " + gearUp + ", flying: " + isFlying + ", speed: " + currentSpeed + " mph.");
     }
 
     @Override

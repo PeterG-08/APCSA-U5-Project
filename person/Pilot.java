@@ -9,7 +9,15 @@ public class Pilot extends Person {
 
     @Override
     public void doTask() {
-        aircraft.setThrottle(0.7);
+        double t = Math.random();
+        t = (double) ((int) (t * 100));
+        t /= 100;
+
+        aircraft.setFlying(true);
+        aircraft.setGearUp(true);
+
+        log("Setting " + aircraft.name + " throttle to " + t + " and bringing the gear up.");
+        aircraft.setThrottle(t);
     }
 
     @Override
