@@ -1,5 +1,10 @@
 package aircraft;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import person.Person;
 import util.Logged;
 
 public class Aircraft extends Logged {
@@ -13,6 +18,8 @@ public class Aircraft extends Logged {
     private boolean gearUp = false;
     private double currentSpeed = 0;
     private boolean isFlying = false;
+
+    private final Set<Person> persons = new HashSet<>();
 
     /**
      * Constructs a new Aircraft with a unique serial number.
@@ -50,11 +57,20 @@ public class Aircraft extends Logged {
         return currentSpeed;
     }
 
+    public void addPersons(Person... persons) {
+        this.persons.addAll(List.of(persons));
+    }
+
     /**
      * Sets the speed throttle from [0, 1] (0 -> no speed, 1 -> max speed).
      */
     public void setThrottle(double throttle) {
         currentSpeed = throttle * maxSpeedMph;
+    }
+
+    @Override
+    public void logStatus() {
+        log("butthole");
     }
 
     @Override

@@ -42,6 +42,17 @@ public class Airport {
      * be printed.
      */
     public void iterate() {
-        // TODO
+        persons.forEach(p -> {
+            p.doTask();
+            p.speak();
+        });
+
+        persons.forEach(p -> {
+            p.logStatus();
+        });
+
+        aircrafts.forEach(a -> {
+            a.logStatus();
+        });
     }
 }

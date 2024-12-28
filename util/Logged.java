@@ -1,5 +1,6 @@
 package util;
-public class Logged {
+
+public abstract class Logged {
     protected String logName;
 
     public Logged() {}
@@ -7,4 +8,6 @@ public class Logged {
     public void log(String text) {
         System.out.println("[" + logName + "]: " + text);
     }
+
+    public abstract void logStatus();
 }
