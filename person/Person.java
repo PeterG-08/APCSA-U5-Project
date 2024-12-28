@@ -1,15 +1,22 @@
 package person;
 
-public class Person {
+import util.Logged;
+
+public class Person extends Logged {
     private static int idCounter = 0;
 
+    public final String name;
     public final int id;
 
     /**
      * Constructs a new Person with a unique id.
      */
-    public Person() {
+    public Person(String name) {
+        this.name = name;
+
         id = idCounter ++;
+
+        logName = name + " - " + id;
     }
 
     @Override
