@@ -26,7 +26,7 @@ public abstract class Person extends Base {
 
         id = idCounter ++;
 
-        logName = name + " (" + type + ") - " + id;
+        logName = name + " (" + type + ", " + aircraft.name + ") - " + id;
 
         addActions(this::doTask, this::speak);
     }
@@ -47,7 +47,7 @@ public abstract class Person extends Base {
 
     @Override
     public void logStatus() {
-        log("Status - I am a " + type + " on a " + aircraft.name + "and" + (isHungry ? " I am hungry." : " I am not hungry."));
+        log("Status - I am a " + type + " on a " + aircraft.name + " and" + (isHungry ? " I am hungry." : " I am not hungry."));
     }
 
     @Override

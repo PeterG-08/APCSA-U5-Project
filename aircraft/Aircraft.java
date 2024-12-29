@@ -61,6 +61,10 @@ public abstract class Aircraft extends Base {
         this.persons.addAll(List.of(persons));
     }
 
+    public Set<Person> getPersons() {
+        return persons;
+    }
+
     /**
      * Sets the speed throttle from [0, 1] (0 -> no speed, 1 -> max speed).
      */

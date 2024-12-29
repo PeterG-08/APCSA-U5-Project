@@ -45,6 +45,8 @@ public class Airport {
         persons.forEach(p -> p.randomAction());
         aircrafts.forEach(a -> a.randomAction());
         
+        System.out.println();
+
         persons.forEach(p -> p.logStatus());
         aircrafts.forEach(a -> a.logStatus());
     }

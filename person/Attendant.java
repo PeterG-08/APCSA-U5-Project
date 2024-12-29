@@ -16,6 +16,10 @@ public class Attendant extends Person {
     @Override
     public void doTask() {
         log("Serving drinks and snacks!");
+
+        for (Person person : aircraft.getPersons()) {
+           person.setIsHungry(false);
+        }
     }
 
     @Override

@@ -6,6 +6,8 @@ public class Passenger extends Person {
     public Passenger(String name, Aircraft aircraft) {
         super(name, "Passenger", aircraft);
 
+        isHungry = true;
+
         addActions(this::purchaseTicket);
     }
 
