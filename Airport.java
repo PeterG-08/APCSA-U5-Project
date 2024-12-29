@@ -42,18 +42,10 @@ public class Airport {
      * be printed.
      */
     public void iterate() {
-        persons.forEach(p -> {
-            p.doTask();
-            p.speak();
-        });
-
+        persons.forEach(p -> p.randomAction());
+        aircrafts.forEach(a -> a.randomAction());
+        
         persons.forEach(p -> p.logStatus());
-
-        aircrafts.forEach(a -> {
-            a.doStunt();
-            a.makeSound();
-        });
-
         aircrafts.forEach(a -> a.logStatus());
     }
 }

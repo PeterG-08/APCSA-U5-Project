@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Set;
 
 import person.Person;
-import util.Logged;
+import util.Base;
 
-public abstract class Aircraft extends Logged {
+public abstract class Aircraft extends Base {
     private static int serialCounter = 0;
 
     public final String name;
@@ -31,6 +31,8 @@ public abstract class Aircraft extends Logged {
         this.maxSpeedMph = maxSpeedMph;
 
         logName = name + " - " + serialNumber;
+
+        addActions(this::doStunt, this::makeSound);
     }
 
     public boolean isGearUp() {
@@ -74,7 +76,7 @@ public abstract class Aircraft extends Logged {
     
     @Override
     public void logStatus() {
-        log("Gear up: " + gearUp + ", flying: " + isFlying + ", speed: " + currentSpeed + " mph.");
+        log("Status - Gear up: " + gearUp + ", flying: " + isFlying + ", speed: " + currentSpeed + " mph.");
     }
 
     @Override

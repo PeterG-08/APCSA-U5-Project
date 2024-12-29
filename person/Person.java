@@ -1,9 +1,9 @@
 package person;
 
 import aircraft.Aircraft;
-import util.Logged;
+import util.Base;
 
-public abstract class Person extends Logged {
+public abstract class Person extends Base {
     private static int idCounter = 0;
 
     public final String name;
@@ -11,6 +11,8 @@ public abstract class Person extends Logged {
     public final Aircraft aircraft;
 
     public final int id;
+
+    protected boolean isHungry = false;
 
     /**
      * Constructs a new Person with a unique id.
@@ -25,6 +27,16 @@ public abstract class Person extends Logged {
         id = idCounter ++;
 
         logName = name + " (" + type + ") - " + id;
+
+        addActions(this::doTask, this::speak);
+    }
+
+    public boolean isHungry() {
+        return isHungry;
+    }
+
+    public void setIsHungry(boolean isHungry) {
+        this.isHungry = isHungry;
     }
 
     /** Performs the task that this person does. */
@@ -35,7 +47,7 @@ public abstract class Person extends Logged {
 
     @Override
     public void logStatus() {
-        log("I am a " + type + " on a " + aircraft.name + ".");
+        log("Status - I am a " + type + " on a " + aircraft.name + "and" + (isHungry ? " I am hungry." : " I am not hungry."));
     }
 
     @Override

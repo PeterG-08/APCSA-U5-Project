@@ -5,6 +5,12 @@ import aircraft.Aircraft;
 public class Pilot extends Person {
     public Pilot(String name, Aircraft aircraft) {
         super(name, "Pilot", aircraft);
+
+        addActions(this::turnOnAutoPilot);
+    }
+
+    public void turnOnAutoPilot() {
+        log("Turning on autopilot.");
     }
 
     @Override
