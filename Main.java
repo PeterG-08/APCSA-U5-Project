@@ -5,6 +5,7 @@ import aircraft.SR71;
 import person.Attendant;
 import person.Passenger;
 import person.Pilot;
+import person.Tourist;
 
 class Main {
     public static void main(String[] args) {
@@ -20,9 +21,10 @@ class Main {
         Pilot john = new Pilot("John", cessna);
         Passenger alice = new Passenger("Alice", cessna);
         Attendant jessica = new Attendant("Jessica", cessna);
-        
+        Tourist arabi = new Tourist("arabi",cessna );
+
         jfk.addAircrafts(cessna, sr71);
-        jfk.addPersons(peter, bob, john, alice, lisa, jessica);
+        jfk.addPersons(peter, bob, john, alice, lisa, jessica, arabi);
 
         Scanner scanner = new Scanner(System.in);
 
