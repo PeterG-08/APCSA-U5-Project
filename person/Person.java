@@ -1,6 +1,7 @@
 package person;
 
 import aircraft.Aircraft;
+import aircraft.Transit;
 import util.Base;
 
 public abstract class Person extends Base {
@@ -8,8 +9,8 @@ public abstract class Person extends Base {
 
     public final String name;
     public final String type;
-    public final Aircraft aircraft;
-
+    public  Aircraft aircraft;
+    public Transit transit;
     public final int id;
 
     protected boolean isHungry = false;
@@ -27,6 +28,17 @@ public abstract class Person extends Base {
         id = idCounter ++;
 
         logName = name + " (" + type + ", " + aircraft.name + ") - " + id;
+
+        addActions(this::doTask, this::speak);
+    }
+    public Person(String name, String type, Transit transit) {
+        this.name = name;
+        this.type = type;
+        this.transit = transit;
+
+        id = idCounter ++;
+
+        logName = name + " (" + type + ", " + transit.name + ") - " + id;
 
         addActions(this::doTask, this::speak);
     }
@@ -49,6 +61,7 @@ public abstract class Person extends Base {
     public void logStatus() {
         log("Status - I am a " + type + " on a " + aircraft.name + " and" + (isHungry ? " I am hungry." : " I am not hungry."));
     }
+
 
     @Override
     public boolean equals(Object obj) {

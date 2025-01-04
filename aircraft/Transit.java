@@ -8,7 +8,7 @@ import util.Base;
 
 public abstract class Transit extends Base {
     private static int plateCounter = 0;
-    public final String name;
+    public static String name;
 
     public final int platelNumber;
     public final double maxSpeedMph;

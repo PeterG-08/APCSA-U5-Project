@@ -1,9 +1,17 @@
 package person;
 
 import aircraft.Aircraft;
+import aircraft.Transit;
 
 public class Passenger extends Person {
     public Passenger(String name, Aircraft aircraft) {
+        super(name, "Passenger", aircraft);
+
+        isHungry = true;
+
+        addActions(this::purchaseTicket);
+    }
+    public Passenger(String name, Transit aircraft) {
         super(name, "Passenger", aircraft);
 
         isHungry = true;

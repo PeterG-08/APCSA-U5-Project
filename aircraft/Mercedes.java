@@ -2,23 +2,23 @@ package aircraft;
 
 public class Mercedes extends Transit{
     public Mercedes() {
-        super("Cybertruck", 122);
+        super("Mercedes", 100);
 
-        addActions(this::openDoor);
+        addActions(this::lighton);
     }
 
-    public void openDoor() {
-        log("Automatic door open!");
+    public void lighton() {
+        log("Look at this shiny batman beam in the sphape of a mercedes logo!");
     }
 
     @Override
     public void doStunt() {
-        log(" watch this!(drives through a wall)");
+        log(" Hey look im gonna drift across this entire road.");
     }
 
     @Override
     public void makeSound() {
-        log("honk!");
+        log("honkkkkkkkk!");
 
     }
 }
