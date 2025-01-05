@@ -1,6 +1,6 @@
-package aircraft;
+package transit;
 
-public class Mercedes extends Transit{
+public class Mercedes extends Transit {
     public Mercedes() {
         super("Mercedes", 100);
 
@@ -19,6 +19,5 @@ public class Mercedes extends Transit{
     @Override
     public void makeSound() {
         log("honkkkkkkkk!");
-
     }
 }

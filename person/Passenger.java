@@ -1,7 +1,7 @@
 package person;
 
 import aircraft.Aircraft;
-import aircraft.Transit;
+import transit.Transit;
 
 public class Passenger extends Person {
     public Passenger(String name, Aircraft aircraft) {
@@ -30,7 +30,9 @@ public class Passenger extends Person {
 
     @Override
     public void speak() {
-        log("How much longer is this flight?");
+        String dialogue =  aircraft != null ? "How much longer is this flight?" : "How much longer is this ride?";
+        
+        log(dialogue);
     }
     
 }

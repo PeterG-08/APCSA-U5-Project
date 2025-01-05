@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 import aircraft.Cessna;
-import aircraft.Mercedes;
 import aircraft.SR71;
 import person.Attendant;
 import person.Passenger;
 import person.Pilot;
 import person.Tourist;
+import transit.Mercedes;
 
 class Main {
     public static void main(String[] args) {
@@ -22,10 +22,13 @@ class Main {
         Pilot john = new Pilot("John", cessna);
         Passenger alice = new Passenger("Alice", cessna);
         Attendant jessica = new Attendant("Jessica", cessna);
-        Tourist arabi = new Tourist("arabi",mercedes );
+        Tourist arabi = new Tourist("arabi", mercedes);
         Tourist jeb = new Tourist("Jeb", mercedes);
+
         jfk.addAircrafts(cessna, sr71);
         jfk.addPersons(peter, bob, john, alice, lisa, jessica, arabi, jeb);
+        jfk.addTransits(mercedes);
+
 
         Scanner scanner = new Scanner(System.in);
 

@@ -1,7 +1,7 @@
 package person;
 
 import aircraft.Aircraft;
-import aircraft.Transit;
+import transit.Transit;
 import util.Base;
 
 public abstract class Person extends Base {
@@ -58,8 +58,10 @@ public abstract class Person extends Base {
     public abstract void speak();
 
     @Override
-    public void logStatus() {
-        log("Status - I am a " + type + " on a " + aircraft.name + " and" + (isHungry ? " I am hungry." : " I am not hungry."));
+    public final void logStatus() {
+        String tName = aircraft != null ? aircraft.name : transit.name;
+
+        log("Status - I am a " + type + " on a " + tName + " and" + (isHungry ? " I am hungry." : " I am not hungry."));
     }
 
 

@@ -1,4 +1,4 @@
-package aircraft;
+package transit;
 
 import java.util.HashSet;
 import java.util.List;
@@ -8,7 +8,7 @@ import util.Base;
 
 public abstract class Transit extends Base {
     private static int plateCounter = 0;
-    public static String name;
+    public String name;
 
     public final int platelNumber;
     public final double maxSpeedMph;
@@ -19,9 +19,6 @@ public abstract class Transit extends Base {
 
     private final Set<Person> persons = new HashSet<>();
 
-    /**
-     * Constructs a new Aircraft with a unique serial number.
-     */
     public Transit(String name, double maxSpeedMph) {
         platelNumber=plateCounter++;
 
@@ -76,14 +73,14 @@ public abstract class Transit extends Base {
         currentSpeed = throttle * maxSpeedMph;
     }
 
-    /** Performs the stunt that this aircraft does. */
+    /** Performs the stunt that this transit does. */
     public abstract void doStunt();
 
-    /** Makes the sound that this aircraft makes. */
+    /** Makes the sound that this transit makes. */
     public abstract void makeSound();
 
     @Override
-    public void logStatus() {
+    public final void logStatus() {
         log("Status - Engine on: " + engineStart + ", driving: " + isdriving + ", speed: " + currentSpeed + " mph.");
     }
 

@@ -4,10 +4,12 @@ import java.util.Set;
 
 import aircraft.Aircraft;
 import person.Person;
+import transit.Transit;
 
 public class Airport {
     private final Set<Aircraft> aircrafts = new HashSet<>();
     private final Set<Person> persons = new HashSet<>();
+    private final Set<Transit> transits = new HashSet<>();
 
     public final String name;
     public final String address;
@@ -38,16 +40,25 @@ public class Airport {
     }
 
     /**
+     * Adds the given transits into the airport (if they aren't in the airport already).
+     */
+    public void addTransits(Transit ...transits) {
+        this.transits.addAll(List.of(transits));
+    }
+
+    /**
      * Iterates through all people, calling their tasks and updating all aircrafts. The status of all people / aircrafts will also
      * be printed.
      */
     public void iterate() {
         persons.forEach(p -> p.randomAction());
         aircrafts.forEach(a -> a.randomAction());
-        
+        transits.forEach(t -> t.randomAction());
+
         System.out.println();
 
         persons.forEach(p -> p.logStatus());
         aircrafts.forEach(a -> a.logStatus());
+        transits.forEach(t -> t.logStatus());
     }
 }

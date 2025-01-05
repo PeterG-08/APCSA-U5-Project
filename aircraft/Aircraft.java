@@ -79,7 +79,7 @@ public abstract class Aircraft extends Base {
     public abstract void makeSound();
     
     @Override
-    public void logStatus() {
+    public final void logStatus() {
         log("Status - Gear up: " + gearUp + ", flying: " + isFlying + ", speed: " + currentSpeed + " mph.");
     }
 

@@ -19,8 +19,8 @@ public class Pilot extends Person {
         t = (double) ((int) (t * 100));
         t /= 100;
 
-        aircraft.setFlying(true);
         aircraft.setGearUp(true);
+        aircraft.setFlying(true);
 
         log("Setting " + aircraft.name + " throttle to " + t + " and bringing the gear up.");
         aircraft.setThrottle(t);
