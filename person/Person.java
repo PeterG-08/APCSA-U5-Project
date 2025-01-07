@@ -3,6 +3,8 @@ package person;
 import aircraft.Aircraft;
 import transit.Transit;
 import util.Base;
+import aircraft.Cessna; // aircraft used for testing
+import aircraft.SR71; // aircraft used for testing
 
 public abstract class Person extends Base {
     private static int idCounter = 0;

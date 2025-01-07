@@ -20,5 +20,17 @@ public class SR71 extends Aircraft {
     public void makeSound() {
         log("Zoom zoom!");
     }
+    public static void main(String[]args){
+
+        SR71 mySR71Test = new SR71(); // id 0
+        mySR71Test.sonicBoom();
+        mySR71Test.doStunt();
+        mySR71Test.makeSound();
+
+        SR71 mySR71Test2 = new SR71(); // id 1
+        mySR71Test2.sonicBoom();
+
+
+    }
     
 }

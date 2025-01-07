@@ -3,8 +3,13 @@ import java.util.List;
 import java.util.Set;
 
 import aircraft.Aircraft;
+import person.Attendant;
+import person.Passenger;
 import person.Person;
 import transit.Transit;
+import transit.Mercedes;
+import aircraft.Cessna; // aircraft used for testing
+import aircraft.SR71; // aircraft used for testing
 
 public class Airport {
     private final Set<Aircraft> aircrafts = new HashSet<>();
@@ -60,5 +65,23 @@ public class Airport {
         persons.forEach(p -> p.logStatus());
         aircrafts.forEach(a -> a.logStatus());
         transits.forEach(t -> t.logStatus());
+    }
+
+    public static void main(String[] args){
+
+        // testing objects 
+        Cessna myCessna = new Cessna();
+        SR71 mySR71 = new SR71();
+        Attendant myAttendant = new Attendant("Peter Nizar", myCessna);
+        Passenger myPassenger = new Passenger("Arabi", mySR71);
+        Mercedes myMercedes = new Mercedes();
+
+        Airport myAirportTest = new Airport("JFK", "111-11 Street");
+        
+        myAirportTest.addAircrafts(myCessna, mySR71);
+        myAirportTest.addPersons(myAttendant, myPassenger);
+        myAirportTest.addTransits(myMercedes);
+
+        myAirportTest.iterate();
     }
 }

@@ -2,6 +2,8 @@ package person;
 
 import aircraft.Aircraft;
 import transit.Transit;
+import aircraft.Cessna; // aircraft used for testing
+import aircraft.SR71; // aircraft used for testing
 
 public class Tourist extends Person {
     private boolean obnoxiousness = false;
@@ -47,5 +49,23 @@ public class Tourist extends Person {
         String dialogue =  aircraft != null ? "I can't wait to land in France!" : "I can't wait to get to the hotel!";
 
         log(dialogue);
+    }
+    public static void main(String[] args){
+
+        // testing aircrafts 
+        Cessna myCessna = new Cessna();
+        SR71 mySR71 = new SR71();
+
+        Tourist myTouristTest = new Tourist("Peter", myCessna); // id 0
+        myTouristTest.shove();
+        myTouristTest.changeMood();
+        myTouristTest.getMood();
+        myTouristTest.doTask();
+        myTouristTest.speak();
+
+        Tourist myTouristTest2 = new Tourist("Nizar", mySR71); // id 1
+        myTouristTest2.shove();
+
+
     }
 }

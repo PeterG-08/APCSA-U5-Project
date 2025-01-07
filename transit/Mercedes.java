@@ -20,4 +20,14 @@ public class Mercedes extends Transit {
     public void makeSound() {
         log("honkkkkkkkk!");
     }
+
+    public static void main(String[] args){
+        Mercedes myMercedesTest = new Mercedes(); // id 0
+        myMercedesTest.lighton();
+        myMercedesTest.doStunt();
+        myMercedesTest.makeSound();
+
+        Mercedes myMercedesTest2 = new Mercedes(); // id 1
+        myMercedesTest2.lighton();
+    }
 }
